@@ -7,5 +7,6 @@ app_name = "Virtual_Assistance"
 
 urlpatterns = [
     path('', Index, name='Index'),
+    path('chat-bot/', Chat_Answer, name='Chat_Answer')
 
 ]
