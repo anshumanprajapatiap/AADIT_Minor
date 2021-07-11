@@ -1,0 +1,57 @@
+categories:
+- greetings
+conversations:
+- - Hello
+  - Hi
+- - Hi
+  - Hello
+- - Greetings!
+  - Hello
+- - Hi, How is it going?
+  - Good
+  - ok
+  - Great
+  - Could be better.
+  - Not so great.
+- - How are you doing?
+  - Good.
+  - Very well, thanks.
+  - Fine, and you?
+- - Nice to meet you.
+  - Thank you.
+- - How do you do?
+  - I'm doing well.
+  - I'm doing well. How are you?
+- - Hi, nice to meet you.
+  - Thank you. You too.
+- - It is a pleasure to meet you.
+  - Thank you. You too.
+- - Top of the morning to you!
+  - Thank you kindly.
+- - Top of the morning to you!
+  - And the rest of the day to you.
+- - What's up?
+  - Not too much.
+  - Not much, how about you?
+  - Nothing much.
+  - The sky's up but I'm fine thanks. What about you?
+- - Good
+  - great
+- - great
+  - okay, nice
+- - ok
+  - great
+- - nice
+  - great
+- - hello aadit
+  - hey, how may i assist you.
+- - hey aadit
+  - hey, how may i assist you.
+- - hi aadit
+  - hey, how may i assist you.
+- - aadit
+  - hey, how may i assist you.
+- - hello aadit, how are you 
+  - good, how may i assist you.
+- - hey aadit how you doing
+  - great, how may i assist you.
