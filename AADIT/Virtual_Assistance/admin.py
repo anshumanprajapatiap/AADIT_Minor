@@ -9,6 +9,10 @@ from import_export.admin import ImportExportModelAdmin
 class ViewAdmin(ImportExportModelAdmin):
     pass
 
+@admin.register(About, Location)
+class ViewAdmin(ImportExportModelAdmin):
+    pass
+
 
 @admin.register(notice_data)
 class ViewAdmin(ImportExportModelAdmin):

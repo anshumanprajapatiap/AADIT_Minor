@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.fields import TextField
 # Create your models here.
 
 class user_type(models.Model):
@@ -64,3 +65,19 @@ class facultycabinoffice(models.Model):
 
     def __str__(self):
         return self.collegeidoffaculty.user.emailaddress
+
+
+class About(models.Model):
+    databy = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    body_text = TextField()
+
+    def __str__(self):
+        return self.databy.username
+
+
+class Location(models.Model):
+    databy = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    body_text = TextField()
+
+    def __str__(self):
+        return self.databy.username
