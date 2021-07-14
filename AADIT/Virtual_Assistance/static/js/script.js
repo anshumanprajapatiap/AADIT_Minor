@@ -1,3 +1,5 @@
+/*credit - https://github.com/TheAlph000/AADIT */
+
 const informationSection = document.querySelector(".info");
 const informationContent = document.querySelector(".info-content");
 const chatSection = document.querySelector(".chat");
@@ -6,6 +8,11 @@ const messages = document.querySelector(".messages");
 const textArea = document.querySelector("#chat-text-area");
 const sendBtn = document.querySelector("#send");
 const mic = document.querySelector("#mic");
+const sidebarElement = document.querySelector(".sidebar-content");
+const dropdown = document.querySelectorAll(".sidebar-head");
+let activeItem;
+let dropdownTimer;
+let throttleDropdown = false;
 _Objdata = {};
 var message_user;
 var answer;
@@ -18,6 +25,8 @@ let addSpaceBeforeInfo = function () {
     informationContent.style.marginTop = "auto";
     informationContent.style.marginBottom = "auto";
     informationContent.style.paddingBottom = "0";
+    informationContent.style.transform = "scale(1)";
+    informationContent.style.overflow = "hidden";
   } else {
     // logo.style.paddingTop = `${window.innerHeight * 0.02}px`;
     informationSection.style.alignItems = "stretch";
@@ -25,6 +34,8 @@ let addSpaceBeforeInfo = function () {
     informationContent.style.marginTop = "0";
     informationContent.style.marginBottom = "0";
     informationContent.style.paddingBottom = "2rem";
+    informationContent.style.transform = "scale(0.9)";
+    informationContent.style.overflow = "visible";
   }
 
   //   if (informationContent.scrollHeight == informationContent.clientHeight) {
@@ -81,9 +92,7 @@ function getData(){
     url:'/chat-bot',
     data:_Objdata,
     dataType:'json',
-    beforeSend:function(){
-       $(".ajaxloader").show();
-    },
+    
     success:function(res){
        answer = res;
        //$("#filteredcars").html(res.data);
@@ -95,7 +104,6 @@ function getData(){
   });
 
 };
-
 
 let getRandomReply = function () {
 
@@ -197,6 +205,83 @@ if (!("webkitSpeechRecognition" in window)) {
 }
 
 // startSpeechRecognition();
+
+/*update*/
+function showDropdown(){
+  anime({
+      targets: activeItem,
+      lineHeight: '0',
+      opacity: '0',
+      easing: 'easeInOutQuad',
+      duration: 100,
+      marginTop: '0',
+
+    });
+    let dropDownElement = activeItem[0].parentElement.querySelectorAll(".dropdown-item a");
+    if(dropDownElement){console.log(dropDownElement);
+      anime({
+        targets: dropDownElement,
+        lineHeight: '1.2rem',
+        opacity: '1',
+        display: 'block',
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(50),
+        duration: 100,
+      });}
+
+};
+
+function hideDropdown(){
+  anime({
+    targets: activeItem,
+    lineHeight: '0.9rem',
+    opacity: '1',
+    display: 'block',
+    easing: 'easeInOutQuad',
+    duration: 100,
+    // marginTop: '-0.2rem',
+
+  });
+  let dropDownElement = activeItem[0].parentElement.querySelectorAll(".dropdown-item a");
+    if(dropDownElement){  console.log(dropDownElement);
+      anime({
+        targets: dropDownElement,
+        lineHeight: '0',
+        opacity: '0',
+        display: 'none',
+        easing: 'easeInOutQuad',
+        delay: anime.stagger(50),
+        duration: 100,
+      });}
+};
+
+sidebarElement.addEventListener('mousemove', function(e){
+  if((e.target.classList.contains('sidebar-head') || e.target.classList.contains('sidebar-para')) && !throttleDropdown && e.target.parentElement.classList.contains('drop')) {
+    if(activeItem ){
+      hideDropdown();
+    }
+      activeItem = e.target.parentElement.querySelectorAll('.sidebar-para');
+      activeItemFirstChild = e.target.parentElement.querySelector('.sidebar-para');
+      showDropdown();
+      throttleDropdown = true;
+      dropdownTimer = setTimeout(()=>{
+      throttleDropdown = false;
+      }, 300)
+  }
+  if(e.target.parentElement.classList.contains('not-dropdown') && activeItem){
+    hideDropdown();
+    if(!throttleDropdown) {
+        hideDropdown();
+        throttleDropdown = true;
+        dropdownTimer = setTimeout(()=>{
+        throttleDropdown = false;
+        }, 300)
+  }
+}});
+
+/*updateend*/
+
+
 
 window.addEventListener("resize", addSpaceBeforeInfo);
 window.addEventListener("load", addSpaceBeforeInfo);

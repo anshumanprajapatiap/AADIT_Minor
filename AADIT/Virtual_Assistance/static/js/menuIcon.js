@@ -1,3 +1,5 @@
+/*credit - https://github.com/TheAlph000/AADIT */
+
 let menu = document.querySelector(".wrapper-menu");
 let sidebar = document.querySelector(".sidebar");
 let chatTextArea = document.querySelector("#chat-text-area");

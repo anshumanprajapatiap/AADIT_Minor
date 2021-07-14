@@ -1,3 +1,5 @@
+<!--/*credit - https://github.com/TheAlph000/AADIT */-->
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -5,11 +7,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}"></link>
     <link rel="stylesheet" href="{% static 'css/menuIcon.css' %}"></link>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Crimson+Text&family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet"> 
-    <title>Document</title>
+    <title>ADDIT | Virtual Assistant</title>
   </head>
 
   <body>
@@ -28,10 +34,10 @@
       <div class="info">  
         <div class="info-content  ">
           <h1 class='dept-name'>Department of Information Technology</h1>
-          <p>The Department of Information Technology,<br> University Institute of Technology <br> Rajiv Gandhi Proudyogiki Vishvavidyalaya, Bhopal.</p> <br>
+          <p><!--Department of Information Technology,<br> -->University Institute of Technology <br> Rajiv Gandhi Proudyogiki Vishvavidyalaya, Bhopal.</p> <br>
           <div class="hod">
-            <img src="{% static 'images/hod.jpg' %}" class="profile-pic" alt="">
-            <p class="hod-info"> Er. Ashutosh Gupta <br><span class="designation">Head of Department</span></p>
+            <img src="{% static 'images/aamoghe_071220022646.jpeg' %}" class="profile-pic" alt="">
+            <p class="hod-info"> Dr. Asmita A Moghe <br><span class="designation">Head of Department</span></p>
           </div>
           <ul class="overview-list">
             <li><a href="#">Department Overview</a></li>
@@ -40,7 +46,7 @@
             <li><a href="#">Contact & Location</a></li>
             <li><a href="#">Campus Partners</a></li>
           </ul>
-          <span class="go-to-dept"><a href="#"> GO TO DEPARTMENT&nbsp&nbsp&nbsp&nbsp </a>
+          <span class="go-to-dept"><a href="https://www.uitrgpv.ac.in/departments/department_home.aspx"> GO TO DEPARTMENT&nbsp&nbsp&nbsp&nbsp </a>
             <span style="font-family: font-head;font-size: 1rem;"> &#8250;</span> 
           </div>
       </div>
@@ -48,35 +54,36 @@
       <!-- Col-1 -->
       <div class="chat">
         <div class="chat-content"> 
-        <img src="{% static 'images/logo003.png' %}" alt="" class="logo" id="logo">
+        <img src="{% static 'images/logo_w.png' %}" alt="" class="logo" id="logo">
 
           <div class="messages">
             <br><br>
             <div class="chat-bubble--bot chat-bubble ">
               <img src="{% static 'images/bot.png' %}" alt="" class="chat-bubble-pic chat-bubble-pic--bot"> 
               <div class="chat-bubble-text-container chat-bubble-text-container--bot">
-                <span class="chat-bubble-text-content">Hello. Welcome to Department of Information Technology. I'm SAAS, your virtual assistant. <br> How may I help you?</span>
+                <span class="chat-bubble-text-content">Hello. Welcome to Department of Information Technology. I'm AADIT, your virtual assistant. <br> How may I help you?</span>
               </div> 
             </div>
-
+          
             <div class="chat-bubble--user chat-bubble ">
               <img src="{% static 'images/user.png' %}" alt="" class="chat-bubble-pic"> 
               <div class="chat-bubble-text-container chat-bubble-text-container--user">
                 <span class="chat-bubble-text-content">Hello SAAS. I'm Ashutosh, Your designer. <br> Let's see what people want to ask.</span>
               </div> 
             </div>
-
+            
               <div class="chat-bubble--bot chat-bubble ">
                 <img src="{% static 'images/bot.png' %}" alt="" class="chat-bubble-pic chat-bubble-pic--bot"> 
                 <div class="chat-bubble-text-container chat-bubble-text-container--bot">
                   <span class="chat-bubble-text-content">I am really excited!! Please go ahead and ask me anything.</span>
                 </div> 
               </div>
-
+             
           </div>
           <div class="chat-text-area-container">
             
-            <textarea placeholder="Type here (or) Press Space to activate voice command." name="How can I help you?" id="chat-text-area"></textarea>
+            <textarea placeholder="Please go ahead and ask me anything." name="How can I help you?" id="chat-text-area"></textarea>
+            <!--textarea placeholder="Type here (or) Press Space to activate voice command." name="How can I help you?" id="chat-text-area"></textarea-->
             <img src="{% static 'images/mic.png' %}" id="mic"> 
             <img src="{% static 'images/send.png' %}" id="send"> 
           </div>
@@ -84,13 +91,81 @@
       </div>
       
       <div class="sidebar">
-        
+        <div class="sidebar-content">
+          <div class="sidebar-element not-dropdown">
+            <p class="sidebar-numbers" style="letter-spacing: 0.1rem; margin-top: 10%">280+</p>
+            <p class="sidebar-head">Students</p>
+            <p class="sidebar-para">Students come from more than 15 states. Students come from more than 15 states. Students come from more than 15 states.</p>
+          </div>
+          <div class="sidebar-element">
+            
+            <p class="sidebar-numbers" style="padding-top: 1rem;">Academics</p>
+            <div class="drop" id="time-table">
+              <p class="sidebar-head">Agenda</p>
+              <p class="sidebar-para about">Keep yourself updated with the upcoming classes and labs.</p>
+              <p class="dropdown-item">
+                <a href="">Time table <br></a>
+                <a href="">Upcoming holidays <br></a>
+              </p>
+            </div>
+            <div class="drop" id="Syllabus">
+
+              <p class="sidebar-head">Course</p>
+              <p class="sidebar-para about">Know what you're going to learn in the class.</p>
+              
+              <p class="dropdown-item">
+                <a href="">Scheme <br></a>
+                <a href="">Syllabus <br></a></p>
+            </div>
+
+            <div class="drop" id="book-recommandations">
+
+              <p class="sidebar-head">Recommanded material</p>
+              <p class="sidebar-para about">Confused where to learn from?</p>
+              <p class="dropdown-item">
+                <a href="">Recommanded books <br></a>
+                <a href="">Study material <br></a>
+                <a href="">Online lectures <br></a></p>
+            </div>
+
+            <p class="sidebar-numbers">Examination</p>
+            <div class="drop" id="time-table">
+              <p class="sidebar-head">Midsem</p>
+              <p class="sidebar-para about">All the information for your Mid semesters here.</p>
+              <p class="dropdown-item">
+                <a href="">Detention List<br></a>
+                <a href="">Datesheet<br></a>
+                <a href="">Result<br></a>
+              </p>
+            </div>
+            <div class="drop" id="Syllabus">
+
+              <p class="sidebar-head">End semesters</p>
+              <p class="sidebar-para about">Get all the information about Final exams here</p>
+              
+              <p class="dropdown-item">
+                <a href="">notices<br></a>
+                <a href="">CGPA List<br></a></p>
+            </div>
+
+
+            <div class="not-dropdown" id="notice ">
+                <p class="sidebar-numbers">Notice</p>
+                <a class="sidebar-para notice" >Scholarship update. <br></a>
+                <a class="sidebar-para notice" href="">Marksheet collection. <br></a>
+                <a class="sidebar-para notice" href="">Semester breaks. <br></a>
+                <a class="sidebar-para notice" href="">Internship for 6th Semester. </a>
+            </div>
+          </div>
+            
+        </div>
       </div>
       
       <!-- <h1>Chat</h1> -->
     </div>
   <!-- <div class="sidebar"><p> </p></div> -->
   <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src = "{% static 'js/menuIcon.js' %}"></script>
   <script src = "{% static 'js/script.js' %}"></script>
   </body>

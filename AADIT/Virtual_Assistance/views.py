@@ -15,7 +15,6 @@ def get_keywords(query):
 
 # Create your views here.
 def Index(request):
-  
     return render(request, 'index.html')
 
 #database table search
@@ -83,6 +82,19 @@ def Chat_Answer(request):
 
 
 #attendance system
-def mark_attendance(request):
-    pass
+def Attendance(request):
+    return render(request, 'index-attendance.html')
+
+
+def Mark_Attendance(request):
+    if request.method == 'POST':
+        if request.is_ajax():
+            img = request.FILES.get('imgData')
+    
+    
+    print(img)
+    data = "Attendance marked"
+    print(data)
+
+    return JsonResponse({'data': data})
 
