@@ -81,3 +81,17 @@ class Location(models.Model):
 
     def __str__(self):
         return self.databy.username
+
+class Notice(models.Model):
+    databy = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    body_text = TextField()
+
+    def __str__(self):
+        return self.databy.username
+
+class Syllabus(models.Model):
+    databy = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    body_text = TextField()
+
+    def __str__(self):
+        return self.databy.username

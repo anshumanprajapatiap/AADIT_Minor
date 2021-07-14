@@ -25,8 +25,8 @@ $ pip install requirements.txt
 $ download(nltk)
 
 #### Start Server
-$ cd AADIT
-$ python manage.py runserver
+- change directory to ADDIT PROJECT FILE
+- $ python manage.py runserver
 
 #### Server Details
 - LOCALHOST - http://127.0.0.8/

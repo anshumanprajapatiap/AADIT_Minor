@@ -3,7 +3,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot import response_selection
 from chatterbot import comparisons , logic
 
-chat_bot=ChatBot("IT Dep.", read_only = False, database_uri='sqlite:///databasechatbot.sqlite3',
+chat_bot=ChatBot("IT Dep.", read_only = True, database_uri='sqlite:///databasechatbot.sqlite3',
             logic_adapters = [
                 {
                     "import_path" : 'chatterbot.logic.MathematicalEvaluation'

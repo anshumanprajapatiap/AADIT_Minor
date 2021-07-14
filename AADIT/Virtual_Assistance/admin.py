@@ -9,7 +9,7 @@ from import_export.admin import ImportExportModelAdmin
 class ViewAdmin(ImportExportModelAdmin):
     pass
 
-@admin.register(About, Location)
+@admin.register(About, Location, Notice, Syllabus)
 class ViewAdmin(ImportExportModelAdmin):
     pass
 

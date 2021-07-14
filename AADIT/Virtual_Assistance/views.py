@@ -29,10 +29,12 @@ def In_Location(key):
     return loc
 
 def In_Notice(key):
-    pass
+    noti = Notice.objects.annotate(search=SearchVector('body_text'),).filter(search=key)
+    return noti
 
 def In_Syllabus(key):
-    pass
+    syll = Syllabus.objects.annotate(search=SearchVector('body_text'),).filter(search=key)
+    return syll
 
 
 def Chat_Answer(request):
@@ -40,30 +42,38 @@ def Chat_Answer(request):
     data = ""
     keyword = get_keywords(query)
 
-    for i in range(1, len(keyword)):
-        try:
+    print(keyword)
 
-            table = keyword[i][0]
-            table_key = keyword[i][1]
-            print(table, ' -> ', table_key)
-            if(table=="about"):
-                objectsfilterdata = In_About(table_key)
+    if len(keyword) == 1:
+        print(keyword)
+    else:
+        for i in range(1, len(keyword)):
+            try:
 
-            if(table=="location"):
-                objectsfilterdata = In_Location(table_key)
+                table = keyword[i][0]
+                table_key = keyword[i][1]
+                print(table, ' -> ', table_key)
+                if(table=="about"):
+                    objectsfilterdata = In_About(table_key)
 
-            if(table==""):
+                if(table=="location"):
+                    objectsfilterdata = In_Location(table_key)
+
+                if(table=="notice"):
+                    objectsfilterdata = In_Notice(table_key)
+
+                if(table=="syllabus"):
+                    objectsfilterdata = In_Syllabus(table_key)
+
+            except:
                 pass
-
-        except:
-            pass
     
     try:
         for i in objectsfilterdata:
         
-            data += i.body_text + "./"
+            data += i.body_text 
     except:
-        pass
+        data = keyword
 
     ##search throught keywords in given table
     if data == "":
